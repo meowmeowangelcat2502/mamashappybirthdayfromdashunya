@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MAMULYA OS v2026 | С Днём Рождения, Мамуля!</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&family=Fira+Code:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Экран входа -->
+    <div id="login-screen" class="screen active">
+        <div class="login-card">
+            <div class="user-avatar">👑</div>
+            <h2>Авторизация в системе</h2>
+            <p>Система защиты Mamulya OS</p>
+            <div class="input-group">
+                <input type="password" id="pass-input" placeholder="Введите пароль (например: 1234 или мама)">
+                <button id="login-btn">Войти в систему ✨</button>
+            </div>
+            <p id="login-error" class="error-msg"></p>
+        </div>
+    </div>
+
+    <!-- Главная Операционная Система -->
+    <div id="os-screen" class="screen">
+        <header class="top-bar">
+            <div class="sys-title">💻 MAMULYA OS v2026.10 [ADMIN MODE]</div>
+            <div class="sys-status-pills">
+                <span class="pill green">● Love: 100%</span>
+                <span class="pill gold">★ Status: VIP</span>
+            </div>
+            <div class="sys-time" id="clock">14:37</div>
+        </header>
+
+        <main class="main-content">
+            <!-- Шапка -->
+            <div class="hero-banner">
+                <div class="hero-badge">SYSTEM STATUS: UNLIMITED LOVE</div>
+                <h1>С Днём Рождения, Мамуля! ❤️</h1>
+                <p>Добро пожаловать в твою персональную цифровую вселенную. Нажимай на блоки, играй в игры, исследуй суперспособности и читай послания от Дашуни!</p>
+            </div>
+
+            <!-- Виджет быстрых показателей -->
+            <section class="metrics-grid">
+                <div class="metric-card">
+                    <div class="m-icon">🔋</div>
+                    <div class="m-val">100%</div>
+                    <div class="m-lbl">Заряд энергии и красоты</div>
+                </div>
+                <div class="metric-card">
+                    <div class="m-icon">🛡️</div>
+                    <div class="m-val">MAX</div>
+                    <div class="m-lbl">Защита от невзгод</div>
+                </div>
+                <div class="metric-card">
+                    <div class="m-icon">💖</div>
+                    <div class="m-val">∞</div>
+                    <div class="m-lbl">Любовь Дашуни</div>
+                </div>
+                <div class="metric-card">
+                    <div class="m-icon">💳</div>
+                    <div class="m-val">UNLIMITED</div>
+                    <div class="m-lbl">Лимит на шопинг</div>
+                </div>
+            </section>
+
+            <!-- Раздел 1: Дерево Суперспособностей -->
+            <section class="widget-section">
+                <h2>⚡ Дерево суперспособностей Мамули (Skill Tree)</h2>
+                <p class="section-desc">Нажимай на навыки, чтобы узнать подробности о маминых талантах!</p>
+                <div class="skills-grid">
+                    <div class="skill-card" onclick="showSkill('Антивирус Заботы', 'Умеет мгновенно определять любое недомогание и лечить его чаем с лимоном, витаминками и обнимашками!')">
+                        <div class="s-icon">🩺</div>
+                        <h4>Антивирус Заботы</h4>
+                        <span class="s-lvl">Level MAX</span>
+                    </div>
+                    <div class="skill-card" onclick="showSkill('Телепатия 6-го уровня', 'Чувствует на расстоянии 1000 км, одета ли Дашуня по погоде и покушала ли вовремя.')">
+                        <div class="s-icon">🔮</div>
+                        <h4>Мамина Телепатия</h4>
+                        <span class="s-lvl">Level MAX</span>
+                    </div>
+                    <div class="skill-card" onclick="showSkill('Шопинг-Ниндзя', 'Способность находить самые стильные вещи и тратить деньги с максимальным удовольствием и пользой!')">
+                        <div class="s-icon">🛍️</div>
+                        <h4>Шопинг-Ниндзя</h4>
+                        <span class="s-lvl">Level MAX</span>
+                    </div>
+                    <div class="skill-card" onclick="showSkill('Кулинарная Магия', 'Превращает обычные продукты в шедевры мировой кухни. Вкуснее, чем в любом 5-звездочном ресторане!')">
+                        <div class="s-icon">🍳</div>
+                        <h4>Кулинарная Магия</h4>
+                        <span class="s-lvl">Level MAX</span>
+                    </div>
+                </div>
+                <div id="skill-detail" class="detail-box">Кликни на любую карточку выше, чтобы изучить мамин навык!</div>
+            </section>
+
+            <!-- Раздел 2: Шопинг Калькулятор -->
+            <section class="widget-section">
+                <h2>🛍️ Симулятор идеального шопинга</h2>
+                <p class="section-desc">Выбери, на что сегодня тратим инвестиции, и подними уровень счастья до максимума!</p>
+                <div class="shopping-grid">
+                    <button class="shop-item" data-val="25">👠 Новые туфли (+25% счастья)</button>
+                    <button class="shop-item" data-val="35">👗 Идеальное платье (+35% счастья)</button>
+                    <button class="shop-item" data-val="40">💆‍♀️ День в СПА (+40% счастья)</button>
+                    <button class="shop-item" data-val="50">✈️ Билет на море (+50% счастья)</button>
+                </div>
+                <div class="progress-bar-container">
+                    <div class="progress-bar" id="shop-progress" style="width: 0%;">0%</div>
+                </div>
+                <p id="shop-status" class="status-msg">Уровень счастья: ожидание инвестиций...</p>
+            </section>
+
+            <!-- Раздел 3: Колесо Праздничных Призов -->
+            <section class="widget-section text-center">
+                <h2>🎰 Колесо беспроигрышной лотереи</h2>
+                <p class="section-desc">Испытай удачу и выбей супер-приз от Дашуни!</p>
+                <div class="wheel-box">
+                    <button id="spin-btn" class="cyber-btn gold">Крутить колесо удачи 🎡</button>
+                    <div id="wheel-result" class="result-box">Нажми кнопку, чтобы забрать приз!</div>
+                </div>
+            </section>
+
+            <!-- Раздел 4: Музыкальный плеер (Песня: Бүгін менің туған күнім) -->
+            <section class="widget-section text-center">
+                <h2>🎵 Главный праздничный трек</h2>
+                <p class="section-desc">Нажми ▶️, чтобы включить песню «Бүгін менің туған күнім»!</p>
+                <div class="player-box">
+                    <div class="track-title" id="track-name">🎤 Бүгін менің туған күнім 🎂</div>
+                    <div class="player-controls">
+                        <button class="p-btn play" onclick="toggleAudio()" id="play-btn">▶️ Включить музыку</button>
+                    </div>
+                    <!-- Аудио элемент -->
+                    <audio id="bday-song" preload="auto">
+                        <source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_c8c8a73467.mp3?filename=happy-birthday-15528.mp3" type="audio/mpeg">
+                    </audio>
+                    <div class="yt-fallback">
+                        <a href="https://www.youtube.com/watch?v=GdUb50KeGg4&list=RDGdUb50KeGg4&start_radio=1" target="_blank" class="yt-link">
+                            ▶️ Открыть клип «Бүгін менің туған күнім» на YouTube 🎬
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Раздел 5: Мини-игра -->
+            <section class="widget-section">
+                <h2>🎮 Игра: «Ловец семейного уюта»</h2>
+                <p class="section-desc">Лови падающие предметы кликом! Набери 50 очков, чтобы открыть секретную награду.</p>
+                <div class="game-box">
+                    <div class="game-stats">Очки: <span id="game-score">0</span> / 50</div>
+                    <div id="game-area"></div>
+                    <button id="start-game-btn" class="cyber-btn">Начать игру 🚀</button>
+                </div>
+            </section>
+
+            <!-- Раздел 6: Суточный график Мамули -->
+            <section class="widget-section">
+                <h2>⏰ Суточный протокол Мамули (24h Schedule)</h2>
+                <p class="section-desc">Из чего состоит идеальный день лучшей мамы:</p>
+                <div class="timeline">
+                    <div class="t-item">
+                        <span class="t-time">08:00 - 10:00</span>
+                        <div class="t-content">☕ Утренний кофе, настрой на идеальный день и улыбка пред зеркалом.</div>
+                    </div>
+                    <div class="t-item">
+                        <span class="t-time">10:00 - 14:00</span>
+                        <div class="t-content">👑 Управление миром, дела, забота о семье и поддержание идеального порядка.</div>
+                    </div>
+                    <div class="t-item">
+                        <span class="t-time">14:00 - 18:00</span>
+                        <div class="t-content">🛍️ Время инвестиций в себя: шопинг, встречи, прогулки и радость!</div>
+                    </div>
+                    <div class="t-item">
+                        <span class="t-time">18:00 - 23:00</span>
+                        <div class="t-content">🥰 Уютный семейный вечер, вкусный ужин и релакс.</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Раздел 7: Викторина -->
+            <section class="widget-section">
+                <h2>❓ Мини-викторина: «Вопросы для Мамули»</h2>
+                <p class="section-desc">Ответь на вопрос, чтобы проверить систему:</p>
+                <div class="quiz-box">
+                    <p class="quiz-q">Кто самая любимая, красивая и лучшая мама на свете?</p>
+                    <div class="quiz-options">
+                        <button class="quiz-opt" onclick="checkQuiz(true)">Моя Мамуля (Единственный верный вариант) ❤️</button>
+                        <button class="quiz-opt" onclick="checkQuiz(false)">Кто-то другой (Ошибка доступа 404)</button>
+                    </div>
+                    <div id="quiz-res" class="quiz-res"></div>
+                </div>
+            </section>
+
+            <!-- Раздел 8: 3D Галерея Полароидов -->
+            <section class="widget-section">
+                <h2>📸 Галерея воспоминаний (Нажми, чтобы перевернуть)</h2>
+                <div class="polaroid-grid">
+                    <div class="flip-card">
+                        <div class="flip-inner">
+                            <div class="flip-front">
+                                <img src="mama1.jpg" alt="Мамуля">
+                                <p>Самая красивая ❤️</p>
+                            </div>
+                            <div class="flip-back">
+                                <h3>Моя Мамуля!</h3>
+                                <p>Ты излучаешь свет и тепло, с тобой всегда уютно и надежно.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flip-card">
+                        <div class="flip-inner">
+                            <div class="flip-front">
+                                <img src="mama2.jpg" alt="Мамуля">
+                                <p>Шопинг-королева 🛍️</p>
+                            </div>
+                            <div class="flip-back">
+                                <h3>Стиль и грация</h3>
+                                <p>Твой вкус безупречен, а умение радоваться жизни вдохновляет!</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flip-card">
+                        <div class="flip-inner">
+                            <div class="flip-front">
+                                <img src="mama3.jpg" alt="Мамуля">
+                                <p>Наш защитник 🛡️</p>
+                            </div>
+                            <div class="flip-back">
+                                <h3>Забота и здоровье</h3>
+                                <p>Спасибо за то, что всегда следишь за нами и поддерживаешь в любых начинаниях!</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Раздел 9: Консоль от Дашуни -->
+            <section class="widget-section console-section">
+                <h2>💻 Terminal: Dasha_Message.sh</h2>
+                <div class="console-box" id="console-output"></div>
+            </section>
+
+            <!-- Раздел 10: Сертификат -->
+            <section class="widget-section cert-section">
+                <h2>📜 Именной сертификат</h2>
+                <div class="certificate">
+                    <h3>СЕРТИФИКАТ ЛУЧШЕЙ МАМУЛИ ВО ВСЕЛЕННОЙ</h3>
+                    <p>Настоящий документ официально подтверждает бессрочное право Мамули на бесконечную любовь, здоровье, исполнение любых желаний и безлимитный шопинг!</p>
+                    <div class="cert-stamp">ПЕЧАТЬ: ОДОБРЕНО ДАШУНЕЙ 💖</div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
